@@ -1,0 +1,64 @@
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background-color: #0f2a3a;
+  border-radius: 16px;
+  padding: 8px; /* Espacio para que la imagen no choque con los bordes */
+  box-shadow: 0 4px 15px rgba(100, 180, 220, 0.4); /* Sombra brillante color cyan/celeste */
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(100, 180, 220, 0.6);
+}
+
+.cardThumb {
+  position: relative;
+  width: 110px;
+  min-width: 110px;
+  height: 110px;
+  flex-shrink: 0;
+  border-radius: 12px; /* Bordes redondeados en la imagen */
+  overflow: hidden;
+}
+
+.thumbImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.cardBody {
+  padding: var(--space-sm) var(--space-md) var(--space-sm) 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.cardTitle {
+  font-family: var(--font-heading) !important;
+  font-size: 1rem !important;
+  color: var(--color-white) !important;
+  letter-spacing: 0.06em;
+}
+
+.cardDesc {
+  color: rgba(255, 255, 255, 0.75) !important;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .cardThumb {
+    width: 90px;
+    min-width: 90px;
+    height: 90px;
+  }
+}

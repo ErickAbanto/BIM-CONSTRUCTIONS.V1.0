@@ -1,0 +1,62 @@
+/* Solo estilos de layout del orquestador */
+
+.section {
+  width: 100%;
+  background-color: var(--color-gray-50);
+  padding: calc(var(--space-3xl) + 80px) 0 0; /* Extra 80px to accommodate the banner overlapping from above */
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-2xl);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+/* ---- Imagen de la casa ---- */
+.houseWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: 340px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.houseImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 0 var(--space-xl);
+  }
+
+  .houseWrapper {
+    height: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: var(--space-3xl); /* Reset to normal padding since banner no longer overlaps on mobile */
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 var(--space-lg);
+  }
+}

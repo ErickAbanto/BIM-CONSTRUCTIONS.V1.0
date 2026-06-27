@@ -1,0 +1,40 @@
+.metrics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-3xl);
+  padding: var(--space-2xl) 0 var(--space-3xl);
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  text-align: center;
+}
+
+.metricNumber {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2.5rem, 5vw, 3.5rem) !important;
+  color: var(--color-accent) !important;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.metricLabel {
+  font-family: var(--font-sans) !important;
+  font-weight: var(--font-weight-semibold) !important;
+  color: var(--color-gray-700) !important;
+  line-height: 1.4;
+  white-space: pre-line;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2x2 Grid en móvil */
+    gap: var(--space-2xl) var(--space-lg);
+  }
+}

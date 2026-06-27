@@ -1,0 +1,13 @@
+{
+  "navbar": {
+    "about": "About Us",
+    "projects": {
+      "title": "Projects",
+      "inProgress": "In Progress",
+      "finished": "Completed"
+    },
+    "services": "Services",
+    "contact": "Contact",
+    "cta": "Contact Us"
+  }
+}

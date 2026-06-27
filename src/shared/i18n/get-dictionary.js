@@ -1,8 +1,18 @@
 import 'server-only';
 
 const dictionaries = {
-  en: () => import('./dictionaries/en.json').then((module) => module.default),
-  es: () => import('./dictionaries/es.json').then((module) => module.default),
+  en: async () => {
+    const common = await import('./dictionaries/common/en.json').then((m) => m.default).catch(() => ({}));
+    const home = await import('./dictionaries/home/en.json').then((m) => m.default).catch(() => ({}));
+    const sobreNosotros = await import('./dictionaries/sobre-nosotros/en.json').then((m) => m.default).catch(() => ({}));
+    return { navbar: common.navbar, home, sobreNosotros };
+  },
+  es: async () => {
+    const common = await import('./dictionaries/common/es.json').then((m) => m.default).catch(() => ({}));
+    const home = await import('./dictionaries/home/es.json').then((m) => m.default).catch(() => ({}));
+    const sobreNosotros = await import('./dictionaries/sobre-nosotros/es.json').then((m) => m.default).catch(() => ({}));
+    return { navbar: common.navbar, home, sobreNosotros };
+  },
 };
 
 /**

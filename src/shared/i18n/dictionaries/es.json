@@ -18,5 +18,53 @@
       "btnProjects": "Ver Proyectos",
       "btnContact": "Cotizar Servicio"
     }
+  },
+  "sobreNosotros": {
+    "hero": {
+      "title": "\"QUIÉNES SOMOS\"",
+      "description": "Somos una empresa especializada en el desarrollo de infraestructuras y obras civiles, expedientes técnicos, estudios básicos de ingeniería con amplio reconocimiento por parte de múltiples clientes en el rubro privado.",
+      "btnProjects": "Ver Proyectos"
+    },
+    "banner": {
+      "title": "CONOCE COMO INICIAMOS",
+      "quote": "\"Desde el primer plano hasta la entrega final, construimos con pasión, integridad y la máxima precisión técnica en cada detalle.\""
+    },
+    "historia": {
+      "text": "\"Fundada con la visión de transformar el panorama urbano del Perú, BIM CONSTRUCTIONS J/J S.A.C. nació como un proyecto de ingenieros decididos a elevar los estándares de la construcción civil. Comenzamos ejecutando obras residenciales menores, y hoy, gracias a la confianza de nuestros clientes y la integración de tecnología BIM de vanguardia, lideramos proyectos de gran envergadura a nivel nacional, garantizando estructuras seguras, modernas y sostenibles.\"",
+      "card1Title": "INGENIERÍA DE PRECISIÓN",
+      "card1Desc": "Planificación rigurosa y optimización de recursos en cada etapa de la obra.",
+      "card2Title": "DISEÑO VANGUARDISTA",
+      "card2Desc": "Espacios contemporáneos que fusionan perfectamente la estética visual con la funcionalidad.",
+      "card3Title": "TECNOLOGÍA BIM",
+      "card3Desc": "Modelado inteligente en 3D para reducir errores, costos y asegurar plazos de entrega exactos."
+    },
+    "mision": {
+      "title": "MISIÓN",
+      "text": "Satisfacer las necesidades en proyectos de nuestros clientes con un servicio de calidad y precios competitivos del mercado, optando por la mejora continua la METODOLOGÍA BIM en los procesos industriales y edificaciones."
+    },
+    "vision": {
+      "title": "VISIÓN",
+      "text": "Llevar a cabo proyectos de impacto, desde los más modestos hasta los más destacados, en beneficio de la sociedad. Además, aspiramos a convertirnos en una empresa reconocida y recomendada, donde los clientes a nivel nacional e internacional sientan conformidad."
+    },
+    "valores": {
+      "sectionTitle": "VALORES QUE NOS IDENTIFICAN",
+      "sectionDesc": "\"Nuestra cultura organizacional se basa en principios sólidos que guían cada decisión en el campo y en la oficina, asegurando la excelencia en cada obra que firmamos.\"",
+      "v1Title": "SEGURIDAD",
+      "v1Desc": "La integridad de nuestro equipo y de las obras es nuestra prioridad número uno.",
+      "v2Title": "CALIDAD",
+      "v2Desc": "No aceptamos menos que la excelencia en cada acabado y estructura.",
+      "v3Title": "TRANSPARENCIA",
+      "v3Desc": "Comunicación clara, presupuestos honestos y cumplimiento estricto de plazos.",
+      "v4Title": "INNOVACIÓN",
+      "v4Desc": "Evolucionamos constantemente adoptando las últimas tecnologías del sector."
+    },
+    "stats": {
+      "stat1Number": "+50",
+      "stat1Label": "Proyectos Ejecutados\na Nivel Nacional",
+      "stat2Number": "100%",
+      "stat2Label": "Cumplimiento en\nPlazos y Presupuestos",
+      "stat3Number": "98%",
+      "stat3Label": "Clientes\nSatisfechos"
+    }
   }
 }

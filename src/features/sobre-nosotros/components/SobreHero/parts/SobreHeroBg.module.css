@@ -1,0 +1,22 @@
+.bgWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(255, 255, 255, 0.88) 0%,
+    rgba(243, 244, 246, 0.75) 45%,
+    rgba(34, 60, 145, 0.25) 100%
+  );
+}
