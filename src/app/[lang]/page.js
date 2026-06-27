@@ -1,4 +1,5 @@
 import { Hero } from "@/features/home/components/Hero/Hero";
+import { AboutUsSection } from "@/features/home/components/AboutUsSection/AboutUsSection";
 import { getDictionary } from "@/shared/i18n/get-dictionary";
 
 /**
@@ -16,10 +17,7 @@ export default async function Home({ params }) {
   return (
     <main>
       <Hero dict={dict.home} lang={lang} />
-      {/* 
-        Aquí puedes agregar más componentes modulares para la página de inicio,
-        como <Features />, <RecentProjects />, <Testimonials />, etc. 
-      */}
+      <AboutUsSection dict={dict.home.aboutUs} />
     </main>
   );
 }

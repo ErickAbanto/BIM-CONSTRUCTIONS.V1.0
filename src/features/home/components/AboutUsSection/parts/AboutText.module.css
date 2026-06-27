@@ -1,0 +1,46 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  justify-content: center;
+}
+
+.title {
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.description {
+  color: var(--color-muted-foreground);
+  line-height: 1.7;
+}
+
+/* Bloque destacado para "Cómo Empezamos" */
+.historyCard {
+  background-color: var(--color-muted);
+  border-left: 4px solid var(--color-accent);
+  padding: var(--space-md);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  margin-top: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.historyCard:hover {
+  box-shadow: var(--shadow-md);
+  
+}
+
+.historyTitle {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.historyText {
+  font-size: var(--font-size-base);
+  color: var(--color-muted-foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
