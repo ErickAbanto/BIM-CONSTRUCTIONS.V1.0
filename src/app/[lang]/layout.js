@@ -37,7 +37,7 @@ export default async function RootLayout({ children, params }) {
   const dict = await getDictionary(lang);
 
   return (
-    <html lang={lang} className={`${montserrat.variable} ${bebasNeue.variable}`}>
+    <html lang={lang} className={`${montserrat.variable} ${bebasNeue.variable}`} data-scroll-behavior="smooth">
       <body>
         <Navbar dict={dict.navbar} lang={lang} />
         {children}

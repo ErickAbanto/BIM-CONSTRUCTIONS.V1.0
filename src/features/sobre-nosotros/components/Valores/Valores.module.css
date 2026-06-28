@@ -1,0 +1,31 @@
+/* Solo estilos de layout del orquestador */
+
+.section {
+  width: 100%;
+  background-color: var(--color-gray-50);
+  padding: var(--space-3xl) 0;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-2xl);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 var(--space-lg);
+  }
+}

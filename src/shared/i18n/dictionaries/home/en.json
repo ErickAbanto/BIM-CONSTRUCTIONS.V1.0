@@ -1,0 +1,14 @@
+{
+  "hero": {
+    "title": "Building the future with",
+    "highlight": "BIM Technology",
+    "description": "We offer engineering, construction, and project management services with cutting-edge BIM technology. We optimize resources, time, and quality at every stage.",
+    "btnProjects": "View Projects"
+  },
+  "aboutUs": {
+    "title": "About Us",
+    "description": "We are a leading construction company specialized in integrating BIM methodologies. We transform how the most ambitious projects are designed, built, and operated.",
+    "historyTitle": "How We Started",
+    "historyText": "We began as a small engineering studio, driven by the need to reduce construction errors. Today, thanks to our early adoption of 3D technologies and data analysis, we have evolved into a benchmark for smart and efficient construction."
+  }
+}

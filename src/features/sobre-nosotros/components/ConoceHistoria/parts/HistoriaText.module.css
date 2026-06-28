@@ -1,0 +1,7 @@
+.historyText {
+  font-family: var(--font-sans) !important;
+  font-size: var(--font-size-base) !important;
+  color: var(--color-gray-700) !important;
+  line-height: 1.85;
+  font-style: italic;
+}
