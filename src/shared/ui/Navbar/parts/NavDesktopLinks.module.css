@@ -19,7 +19,9 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-family: var(--font-heading);
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
 }
 
 .link::after {

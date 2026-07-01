@@ -1,0 +1,29 @@
+.header {
+  margin-bottom: var(--space-2xl);
+}
+
+/* Línea decorativa naranja antes del título */
+.accent {
+  display: block;
+  width: 3.5rem;
+  height: 3px;
+  background-color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+  border-radius: var(--radius-full);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-bim-white);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: var(--font-size-3xl);
+  }
+}

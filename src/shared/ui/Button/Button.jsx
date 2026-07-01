@@ -21,6 +21,7 @@ export function Button({
   variant = "primary",
   size = "md",
   href,
+  nativeLink = false,
   type = "button",
   disabled = false,
   ariaLabel,
@@ -36,6 +37,14 @@ export function Button({
   );
 
   if (href) {
+    if (nativeLink) {
+      return (
+        <a href={href} className={classes} aria-label={ariaLabel} {...rest}>
+          {children}
+        </a>
+      );
+    }
+
     return (
       <Link
         href={href}

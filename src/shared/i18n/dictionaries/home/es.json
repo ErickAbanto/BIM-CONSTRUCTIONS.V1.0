@@ -10,5 +10,13 @@
     "description": "Somos una empresa constructora líder, especializada en la integración de metodologías BIM. Transformamos la manera en que se diseñan, construyen y operan los proyectos más ambiciosos.",
     "historyTitle": "Nuestros Inicios",
     "historyText": "Comenzamos como un pequeño estudio de ingeniería, impulsados por la necesidad de reducir errores en obra. Hoy, gracias a la adopción temprana de tecnologías 3D y análisis de datos, hemos evolucionado hasta convertirnos en referentes de la construcción inteligente y eficiente."
+  },
+  "servicios": {
+    "sectionTitle": "Servicios",
+    "cards": [
+      { "id": "arquitectura", "title": "Arquitectura" },
+      { "id": "construccion-civil", "title": "Construcción Civil" },
+      { "id": "remodelaciones", "title": "Remodelaciones" }
+    ]
   }
 }

@@ -1,0 +1,43 @@
+.section {
+  position: relative;
+  width: 100%;
+  padding: var(--space-3xl) var(--space-xl);
+  background-color: var(--color-gray-900);
+  overflow: hidden;
+}
+
+/* Imagen de fondo panorámica */
+.backgroundImage {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.35) saturate(0.6);
+  z-index: 0;
+}
+
+/* Overlay con gradiente azul corporativo */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 60, 145, 0.50) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  z-index: 1;
+}
+
+/* Contenedor centrado */
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: var(--space-2xl) var(--space-md);
+  }
+}

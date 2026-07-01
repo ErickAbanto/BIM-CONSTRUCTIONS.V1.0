@@ -10,5 +10,13 @@
     "description": "We are a leading construction company specialized in integrating BIM methodologies. We transform how the most ambitious projects are designed, built, and operated.",
     "historyTitle": "How We Started",
     "historyText": "We began as a small engineering studio, driven by the need to reduce construction errors. Today, thanks to our early adoption of 3D technologies and data analysis, we have evolved into a benchmark for smart and efficient construction."
+  },
+  "servicios": {
+    "sectionTitle": "Services",
+    "cards": [
+      { "id": "arquitectura", "title": "Architecture" },
+      { "id": "construccion-civil", "title": "Civil Construction" },
+      { "id": "remodelaciones", "title": "Renovations" }
+    ]
   }
 }

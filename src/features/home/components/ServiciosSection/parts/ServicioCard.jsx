@@ -1,0 +1,39 @@
+import Image from "next/image";
+import styles from "./ServicioCard.module.css";
+
+/**
+ * Individual service card for the ServiciosSection.
+ * Server Component — no interactivity, purely presentational link.
+ *
+ * @param {Object} props
+ * @param {string} props.title    - Localized service title.
+ * @param {string} props.imageSrc - Absolute path to card background image.
+ * @param {string} props.imageAlt - Alt text for the card background image.
+ * @param {string} props.href     - Navigation URL (currently routes to /[lang]/servicios).
+ * @returns {JSX.Element}
+ */
+export function ServicioCard({ title, imageSrc, imageAlt, href }) {
+  return (
+    <a href={href} className={styles.card} aria-label={`${title} — Ver servicio`}>
+      {/* Imagen de fondo */}
+      <Image
+        src={imageSrc}
+        alt={imageAlt}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        className={styles.cardImage}
+      />
+
+      {/* Capa glassmorphism con gradiente azul corporativo */}
+      <div className={styles.cardGlass} aria-hidden="true" />
+
+      {/* Contenido visible */}
+      <div className={styles.cardContent}>
+        <h3 className={styles.cardTitle}>{title}</h3>
+        <span className={styles.cardCta} aria-hidden="true">
+          Ver servicio →
+        </span>
+      </div>
+    </a>
+  );
+}
