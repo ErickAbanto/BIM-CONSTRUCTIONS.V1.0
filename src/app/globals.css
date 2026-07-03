@@ -17,6 +17,12 @@
   --color-accent-hover: #b55202; /* Darker orange */
   --color-white: var(--color-bim-white);
 
+  /* RGB channels for rgba() usage */
+  --color-bim-blue-rgb: 34, 60, 145;
+  --color-bim-orange-rgb: 220, 100, 3;
+  --color-bim-white-rgb: 255, 255, 255;
+  --color-black-rgb: 0, 0, 0;
+
   /* Neutral palette */
   --color-gray-50: #f9fafb;
   --color-gray-100: #f3f4f6;

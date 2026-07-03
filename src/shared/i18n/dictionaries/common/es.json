@@ -1,13 +1,26 @@
 {
   "navbar": {
     "about": "Sobre Nosotros",
-    "projects": {
-      "title": "Proyectos",
-      "inProgress": "En progreso",
-      "finished": "Terminado"
-    },
+    "projects": "Proyectos",
     "services": "Servicios",
     "contact": "Contacto",
-    "cta": "Contáctanos"
+    "cta": "Contáctanos",
+    "aria": {
+      "mainNav": "Navegación principal",
+      "logo": "BIM Constructions — Inicio"
+    }
+  },
+  "errors": {
+    "notFound": {
+      "title": "Página no encontrada",
+      "message": "Lo sentimos, la página que estás buscando no existe o ha sido movida a otra dirección.",
+      "btnBack": "Volver al Inicio"
+    },
+    "serverError": {
+      "title": "¡Algo salió mal!",
+      "message": "Ocurrió un error inesperado en el servidor al intentar cargar esta sección. Nuestro equipo ya ha sido notificado.",
+      "btnRetry": "Intentar de nuevo",
+      "btnBack": "Volver al Inicio"
+    }
   }
 }

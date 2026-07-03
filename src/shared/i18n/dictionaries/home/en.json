@@ -13,6 +13,8 @@
   },
   "servicios": {
     "sectionTitle": "Services",
+    "cardCta": "View service →",
+    "cardAriaSuffix": "— View service",
     "cards": [
       { "id": "arquitectura", "title": "Architecture" },
       { "id": "construccion-civil", "title": "Civil Construction" },

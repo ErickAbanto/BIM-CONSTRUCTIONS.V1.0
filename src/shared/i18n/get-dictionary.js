@@ -5,13 +5,13 @@ const dictionaries = {
     const common = await import('./dictionaries/common/en.json').then((m) => m.default).catch(() => ({}));
     const home = await import('./dictionaries/home/en.json').then((m) => m.default).catch(() => ({}));
     const sobreNosotros = await import('./dictionaries/sobre-nosotros/en.json').then((m) => m.default).catch(() => ({}));
-    return { navbar: common.navbar, home, sobreNosotros };
+    return { navbar: common.navbar, home, sobreNosotros, errors: common.errors };
   },
   es: async () => {
     const common = await import('./dictionaries/common/es.json').then((m) => m.default).catch(() => ({}));
     const home = await import('./dictionaries/home/es.json').then((m) => m.default).catch(() => ({}));
     const sobreNosotros = await import('./dictionaries/sobre-nosotros/es.json').then((m) => m.default).catch(() => ({}));
-    return { navbar: common.navbar, home, sobreNosotros };
+    return { navbar: common.navbar, home, sobreNosotros, errors: common.errors };
   },
 };
 

@@ -8,12 +8,13 @@ import styles from "./NavLogo.module.css";
  * NavLogo Molecule
  *
  * @param {Object} props
- * @param {() => void} [props.onClick]
+ * @param {() => void} props.onClick
+ * @param {string} [props.ariaLabel="BIM Constructions — Inicio"]
  * @returns {JSX.Element}
  */
-export function NavLogo({ onClick }) {
+export function NavLogo({ onClick, ariaLabel = "BIM Constructions — Inicio" }) {
   return (
-    <Link href="/" className={styles.logo} aria-label="BIM Constructions — Inicio" onClick={onClick}>
+    <Link href="/" className={styles.logo} aria-label={ariaLabel} onClick={onClick}>
       <div className={styles.logoImageWrapper}>
         <Image 
           src="/images/LOGO_BIM.png" 

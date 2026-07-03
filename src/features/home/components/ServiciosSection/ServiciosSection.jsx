@@ -44,7 +44,12 @@ export function ServiciosSection({ dict, lang }) {
 
       <div className={styles.container}>
         <SectionHeader title={dict.sectionTitle} headingId="servicios-heading" />
-        <ServiciosGrid cards={dict.cards} lang={lang} />
+        <ServiciosGrid 
+          cards={dict.cards} 
+          lang={lang} 
+          cardCta={dict.cardCta}
+          cardAriaSuffix={dict.cardAriaSuffix}
+        />
       </div>
     </section>
   );

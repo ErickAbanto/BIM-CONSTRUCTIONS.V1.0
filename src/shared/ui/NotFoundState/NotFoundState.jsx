@@ -6,20 +6,30 @@ import styles from "./NotFoundState.module.css";
 /**
  * Reusable Not Found (404) UI component.
  *
+ * @param {Object} props
+ * @param {Object} props.dict - Dictionary translations for the 404 page.
+ * @param {string} [props.lang="es"] - Current language locale.
  * @returns {JSX.Element}
  */
-export function NotFoundState() {
+export function NotFoundState({ dict, lang = "es" }) {
+  // En caso de que se monte sin diccionario (ej. error 404 de next estático) usamos fallback
+  const d = dict || {
+    title: "Página no encontrada",
+    message: "Lo sentimos, la página que estás buscando no existe o ha sido movida a otra dirección.",
+    btnBack: "Volver al Inicio"
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.errorCode}>404</div>
       <Title level="h1" className={styles.title}>
-        Página no encontrada
+        {d.title}
       </Title>
       <Text as="p" size="lg" className={styles.message}>
-        Lo sentimos, la página que estás buscando no existe o ha sido movida a otra dirección.
+        {d.message}
       </Text>
-      <Button variant="primary" href="/es" size="lg" nativeLink={true}>
-        Volver al Inicio
+      <Button variant="primary" href={`/${lang}`} size="lg" nativeLink={true}>
+        {d.btnBack}
       </Button>
     </div>
   );

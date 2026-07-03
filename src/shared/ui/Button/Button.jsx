@@ -10,6 +10,7 @@ import { cn } from "@/shared/lib/cn";
  * @param {'primary' | 'outline' | 'ghost'} [props.variant='primary'] - Visual variant.
  * @param {'sm' | 'md' | 'lg'} [props.size='md'] - Size preset.
  * @param {string} [props.href] - If provided, renders as a Next.js Link.
+ * @param {boolean} [props.nativeLink=false] - Renders a native anchor instead of next/link when href is provided.
  * @param {'button' | 'submit' | 'reset'} [props.type='button'] - Button type attribute (ignored when href is set).
  * @param {boolean} [props.disabled=false] - Whether the button is disabled.
  * @param {string} [props.ariaLabel] - Accessible label for screen readers.

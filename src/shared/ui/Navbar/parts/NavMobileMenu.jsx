@@ -87,7 +87,7 @@ export function NavMobileMenu({ isOpen, items, pathname, activeDropdown, toggleD
 
       </ul>
       <div className={styles.mobileCta}>
-        <div style={{ marginBottom: "var(--space-md)", display: "flex", justifyContent: "center" }}>
+        <div className={styles.mobileCtaLangWrapper}>
           <NavLanguageToggle />
         </div>
         <Button href={`/${lang}/contacto`} variant="primary" size="lg" ariaLabel={dict.cta} onClick={onClose}>

@@ -24,16 +24,16 @@ const CARD_ASSETS = {
  */
 
 /**
- * Grid of service cards for ServiciosSection.
- * Owns the CARD_ASSETS mapping — keeping it out of the orchestrator.
- * Server Component (default).
- *
- * @param {Object}             props
- * @param {ServicioCardData[]} props.cards - Array of service card data from dictionary.
- * @param {string}             props.lang  - Active locale for building hrefs.
+ * Grid layout for ServicioCard components.
+ * 
+ * @param {Object} props
+ * @param {Array<{id: string, title: string}>} props.cards - List of services.
+ * @param {string} props.lang - Current language locale.
+ * @param {string} [props.cardCta]
+ * @param {string} [props.cardAriaSuffix]
  * @returns {JSX.Element}
  */
-export function ServiciosGrid({ cards, lang }) {
+export function ServiciosGrid({ cards, lang, cardCta, cardAriaSuffix }) {
   return (
     <div className={styles.grid}>
       {cards.map((card) => {
@@ -49,6 +49,8 @@ export function ServiciosGrid({ cards, lang }) {
             imageSrc={assets.imageSrc}
             imageAlt={assets.imageAlt}
             href={`/${lang}/servicios`}
+            ctaText={cardCta}
+            ariaSuffix={cardAriaSuffix}
           />
         );
       })}

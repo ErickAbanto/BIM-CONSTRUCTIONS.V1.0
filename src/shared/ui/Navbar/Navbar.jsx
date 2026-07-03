@@ -42,13 +42,7 @@ export function Navbar({ className, dict, lang }) {
   
   const navItems = [
     { label: dict.about, href: `/${lang}/sobre-nosotros` },
-    { 
-      label: dict.projects.title, 
-      subItems: [
-        { label: dict.projects.inProgress, href: `/${lang}/proyectos/en-progreso` },
-        { label: dict.projects.finished, href: `/${lang}/proyectos/terminado` },
-      ]
-    },
+    { label: dict.projects, href: `/${lang}/proyectos` },
     { label: dict.services, href: `/${lang}/servicios` },
     { label: dict.contact, href: `/${lang}/contacto` },
   ];
@@ -100,9 +94,9 @@ export function Navbar({ className, dict, lang }) {
 
   return (
     <header className={cn(styles.header, className)} ref={navRef}>
-      <nav className={styles.nav} aria-label="Navegación principal">
+      <nav className={styles.nav} aria-label={dict.aria?.mainNav || "Navegación principal"}>
         
-        <NavLogo onClick={closeMobile} />
+        <NavLogo onClick={closeMobile} ariaLabel={dict.aria?.logo} />
 
         <NavDesktopLinks 
           items={navItems} 

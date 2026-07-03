@@ -1,5 +1,6 @@
 import { Montserrat, Bebas_Neue } from "next/font/google";
 import { NotFoundState } from "@/shared/ui/NotFoundState/NotFoundState";
+import esDict from "@/shared/i18n/dictionaries/common/es.json";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -25,7 +26,7 @@ export default function GlobalNotFound() {
     <html lang="es" className={`${montserrat.variable} ${bebasNeue.variable}`} data-scroll-behavior="smooth" suppressHydrationWarning>
       <body suppressHydrationWarning>
         <main>
-          <NotFoundState />
+          <NotFoundState dict={esDict.errors.notFound} lang="es" />
         </main>
       </body>
     </html>

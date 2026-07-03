@@ -109,6 +109,12 @@
   justify-content: center;
 }
 
+.mobileCtaLangWrapper {
+  margin-bottom: var(--space-md);
+  display: flex;
+  justify-content: center;
+}
+
 .ctaIcon {
   display: inline-flex;
   width: 16px;

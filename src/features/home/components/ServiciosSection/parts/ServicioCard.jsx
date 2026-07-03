@@ -10,11 +10,13 @@ import styles from "./ServicioCard.module.css";
  * @param {string} props.imageSrc - Absolute path to card background image.
  * @param {string} props.imageAlt - Alt text for the card background image.
  * @param {string} props.href     - Navigation URL (currently routes to /[lang]/servicios).
+ * @param {string} [props.ctaText="Ver servicio →"] - Translated CTA text.
+ * @param {string} [props.ariaSuffix="— Ver servicio"] - Translated ARIA suffix.
  * @returns {JSX.Element}
  */
-export function ServicioCard({ title, imageSrc, imageAlt, href }) {
+export function ServicioCard({ title, imageSrc, imageAlt, href, ctaText = "Ver servicio →", ariaSuffix = "— Ver servicio" }) {
   return (
-    <a href={href} className={styles.card} aria-label={`${title} — Ver servicio`}>
+    <a href={href} className={styles.card} aria-label={`${title} ${ariaSuffix}`}>
       {/* Imagen de fondo */}
       <Image
         src={imageSrc}
@@ -31,7 +33,7 @@ export function ServicioCard({ title, imageSrc, imageAlt, href }) {
       <div className={styles.cardContent}>
         <h3 className={styles.cardTitle}>{title}</h3>
         <span className={styles.cardCta} aria-hidden="true">
-          Ver servicio →
+          {ctaText}
         </span>
       </div>
     </a>
