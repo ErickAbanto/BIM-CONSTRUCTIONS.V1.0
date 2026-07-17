@@ -1,4 +1,5 @@
 import styles from "../ServiciosIconos.module.css";
+import { Text } from "@/shared/ui/Text/Text";
 
 export function ServiciosIconList({ dict }) {
   return (
@@ -22,9 +23,9 @@ export function ServiciosIconList({ dict }) {
             <line x1="2" y1="12" x2="22" y2="12" stroke="var(--color-primary)" strokeWidth="2" />
           </svg>
         </div>
-        <p className={styles.label}>
+        <Text as="p" className={styles.label}>
           Gerencia de<br />Proyectos
-        </p>
+        </Text>
       </div>
 
       {/* Icon 2: Supervisión de obras (Casco) */}
@@ -47,9 +48,9 @@ export function ServiciosIconList({ dict }) {
             <path d="M12 10v7" stroke="var(--color-primary)" strokeWidth="2" />
           </svg>
         </div>
-        <p className={styles.label}>
+        <Text as="p" className={styles.label}>
           Supervisión<br />de obras
-        </p>
+        </Text>
       </div>
 
       {/* Icon 3: Construcción de Edificaciones (Edificio) */}
@@ -72,9 +73,9 @@ export function ServiciosIconList({ dict }) {
             <path d="M15 16h2M15 20h2" stroke="var(--color-primary)" />
           </svg>
         </div>
-        <p className={styles.label}>
+        <Text as="p" className={styles.label}>
           Construcción de<br />Edificaciones
-        </p>
+        </Text>
       </div>
     </div>
   );

@@ -1,6 +1,8 @@
 import styles from "./ServiciosCTA.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import { Title } from "@/shared/ui/Title/Title";
+import { Text } from "@/shared/ui/Text/Text";
 
 export function ServiciosCTA({ dict }) {
   return (
@@ -10,7 +12,7 @@ export function ServiciosCTA({ dict }) {
         <div className={styles.leftColumn}>
           {dict.boxes && dict.boxes.slice(0, 2).map((box, idx) => (
             <div key={idx} className={styles.blackBox}>
-              <h3 className={styles.boxTitle}>{box.title}</h3>
+              <Title level="h3" className={styles.boxTitle}>{box.title}</Title>
             </div>
           ))}
         </div>
@@ -27,14 +29,14 @@ export function ServiciosCTA({ dict }) {
       <div className={styles.bannerWrapper}>
         <div className={styles.banner}>
           <div className={styles.bannerContent}>
-            <h2 className={styles.title}>{dict.title}</h2>
-            <p className={styles.description}>{dict.description}</p>
+            <Title level="h2" className={styles.title}>{dict.title}</Title>
+            <Text as="p" className={styles.description}>{dict.description}</Text>
             <Link href="/es/contacto" className={styles.btn}>
               {dict.btn || "CONTÁCTANOS"}
             </Link>
           </div>
           <div className={styles.logoWrapper}>
-            <img src="/images/logo-metal.png.png" alt="BIM Logo" className={styles.logo} />
+            <Image src="/images/logo-metal.png" alt="BIM Logo" width={200} height={100} className={styles.logo} />
           </div>
         </div>
       </div>
