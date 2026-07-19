@@ -1,6 +1,7 @@
 import { getDictionary } from "@/shared/i18n/get-dictionary";
 import { ContactoHero } from "@/features/contacto/components/ContactoHero/ContactoHero";
 import { ContactoDetails } from "@/features/contacto/components/ContactoDetails/ContactoDetails";
+import { ContactoMap } from "@/features/contacto/components/ContactoMap/ContactoMap";
 
 /**
  * Contacto page — Server Component.
@@ -17,6 +18,7 @@ export default async function ContactoPage({ params }) {
     <main>
       <ContactoHero dict={dict.contacto?.hero || {}} />
       <ContactoDetails dict={dict.contacto?.details || {}} />
+      <ContactoMap />
     </main>
   );
 }
