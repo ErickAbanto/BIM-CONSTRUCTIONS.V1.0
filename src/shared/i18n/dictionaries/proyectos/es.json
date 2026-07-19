@@ -55,5 +55,11 @@
       "title": "Ubicación del Proyecto",
       "mapTitle": "Mapa de ubicación del proyecto"
     }
+  },
+  "cta": {
+    "title": "Agenda una Reunión",
+    "description": "Nuestro equipo de consultores te asesorará durante todo el proceso de la implementación de tu proyecto.",
+    "socialTitle": "Nuestras Redes Sociales",
+    "formTitle": "Déjanos tu Mensaje"
   }
 }

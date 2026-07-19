@@ -84,3 +84,25 @@
     font-size: 4.5rem;
   }
 }
+
+@media (max-width: 640px) {
+  .step {
+    gap: var(--space-md);
+  }
+
+  .iconContainer {
+    width: 60px;
+    height: 60px;
+    border-width: 3px;
+  }
+
+  .stepTitle {
+    font-size: 1.1rem;
+    text-align: left;
+  }
+
+  .watermark {
+    left: 70px;
+    font-size: 3.5rem;
+  }
+}

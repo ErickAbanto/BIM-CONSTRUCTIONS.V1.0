@@ -52,5 +52,15 @@
 @media (max-width: 640px) {
   .formGrid {
     grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+  
+  .title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .subtitle {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-lg);
   }
 }

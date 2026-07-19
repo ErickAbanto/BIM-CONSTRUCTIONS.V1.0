@@ -17,9 +17,11 @@ import { Input } from "@/shared/ui/Input/Input";
  *
  * @param {Object} props
  * @param {Object} props.dict - `contacto.details.form` dictionary slice
+ * @param {string} [props.titleOverride] - Optional override for the main heading
+ * @param {string|null} [props.subtitleOverride] - Optional override for the subtitle (pass null to hide)
  * @returns {JSX.Element|null}
  */
-export function ContactForm({ dict }) {
+export function ContactForm({ dict, titleOverride, subtitleOverride }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!dict) return null;
@@ -43,11 +45,14 @@ export function ContactForm({ dict }) {
     >
       {/* ── Header ── */}
       <Title level="h2" className={styles.title}>
-        {dict.title}
+        {titleOverride !== undefined ? titleOverride : dict.title}
       </Title>
-      <Text as="p" variant="muted" size="sm" className={styles.subtitle}>
-        {dict.subtitle}
-      </Text>
+      
+      {subtitleOverride !== null && (
+        <Text as="p" variant="muted" size="sm" className={styles.subtitle}>
+          {subtitleOverride !== undefined ? subtitleOverride : dict.subtitle}
+        </Text>
+      )}
 
       {/* ── Fields grid ── */}
       <div className={styles.formGrid}>

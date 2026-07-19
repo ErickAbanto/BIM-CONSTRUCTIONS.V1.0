@@ -3,6 +3,7 @@ import { ProyectosHero } from "@/features/proyectos/components/ProyectosHero/Pro
 import { NuestrosProyectos } from "@/features/proyectos/components/NuestrosProyectos/NuestrosProyectos";
 import { PorQueElegirnos } from "@/features/proyectos/components/PorQueElegirnos/PorQueElegirnos";
 import { NuestroProceso } from "@/features/proyectos/components/NuestroProceso/NuestroProceso";
+import { ContactCTA } from "@/features/contacto/components/ContactCTA/ContactCTA";
 
 /**
  * Proyectos page — Server Component.
@@ -21,6 +22,7 @@ export default async function ProyectosPage({ params }) {
       <NuestrosProyectos dict={dict.proyectos?.nuestrosProyectos} lang={lang} />
       <PorQueElegirnos dict={dict.proyectos?.porQueElegirnos} />
       <NuestroProceso dict={dict.proyectos?.nuestroProceso} />
+      <ContactCTA dict={dict.proyectos?.cta} formDict={dict.contacto?.details?.form} />
     </main>
   );
 }

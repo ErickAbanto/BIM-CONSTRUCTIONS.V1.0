@@ -1,0 +1,27 @@
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+@media (max-width: 380px) {
+  .infoItem {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-xs);
+  }
+}

@@ -21,4 +21,14 @@
   .slantedWrapper {
     clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 100%);
   }
+
+  .innerPadding {
+    padding: var(--space-2xl) var(--space-lg) var(--space-xl) var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .innerPadding {
+    padding: var(--space-xl) var(--space-md) var(--space-md) var(--space-md);
+  }
 }

@@ -6,3 +6,9 @@
   /* Extra left padding so card icon boxes (which bleed 28px to the left) stay visible */
   padding-left: var(--space-2xl);
 }
+
+@media (max-width: 380px) {
+  .container {
+    padding-left: 0;
+  }
+}

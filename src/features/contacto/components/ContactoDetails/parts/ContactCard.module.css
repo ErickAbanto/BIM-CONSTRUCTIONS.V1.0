@@ -67,3 +67,26 @@
 .textHighlighted {
   font-style: normal !important;
 }
+
+@media (max-width: 380px) {
+  .card {
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .iconBox {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: var(--space-md);
+    width: 48px;
+    height: 48px;
+  }
+
+  .content {
+    padding-left: 0;
+  }
+}

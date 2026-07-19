@@ -55,5 +55,11 @@
       "title": "Project Location",
       "mapTitle": "Project location map"
     }
+  },
+  "cta": {
+    "title": "Schedule a Meeting",
+    "description": "Our consulting team will advise you throughout the entire implementation process of your project.",
+    "socialTitle": "Our Social Media",
+    "formTitle": "Leave us a Message"
   }
 }
