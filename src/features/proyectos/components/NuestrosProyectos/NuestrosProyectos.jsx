@@ -5,6 +5,7 @@ import styles from "./NuestrosProyectos.module.css";
 import { FilterTabs } from "./parts/FilterTabs";
 import { ProjectCard } from "./parts/ProjectCard";
 import { PROYECTOS_DATA } from "@/shared/statics/proyectosData";
+import { getLocalizedData } from "@/shared/utils/getLocalizedData";
 
 import { Text } from "@/shared/ui/Text/Text";
 
@@ -19,7 +20,8 @@ import { Text } from "@/shared/ui/Text/Text";
 export function NuestrosProyectos({ lang, dict }) {
   const [filter, setFilter] = useState("todos"); // 'todos', 'ejecucion', 'terminado'
 
-  const filteredProjects = PROYECTOS_DATA.filter((project) => {
+  const proyectos = getLocalizedData(PROYECTOS_DATA, lang);
+  const filteredProjects = proyectos.filter((project) => {
     if (filter === "todos") return true;
     return project.status === filter;
   });

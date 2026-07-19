@@ -15,7 +15,8 @@ import { notFound } from "next/navigation";
 export default async function ProyectoDetallePage({ params }) {
   const { lang, slug } = await params;
   
-  const proyecto = PROYECTOS_DATA.find(p => p.slug === slug);
+  const proyectos = PROYECTOS_DATA[lang] || PROYECTOS_DATA.es;
+  const proyecto = proyectos.find(p => p.slug === slug);
 
   if (!proyecto) {
     notFound();

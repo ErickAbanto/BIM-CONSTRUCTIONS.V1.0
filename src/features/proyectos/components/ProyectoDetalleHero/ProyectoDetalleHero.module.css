@@ -16,7 +16,11 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 40%);
+  background: linear-gradient(
+    to top,
+    rgba(var(--color-black-rgb), 0.8) 0%,
+    rgba(var(--color-black-rgb), 0.4) 100%
+  );
   z-index: 1;
 }
 
@@ -46,6 +50,7 @@
   letter-spacing: 0.05em;
   flex: 1;
   text-align: center;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
 .statusIndicator {
