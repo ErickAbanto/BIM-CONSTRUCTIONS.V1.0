@@ -50,13 +50,16 @@
 }
 
 @media (max-width: 768px) {
-  .section {
-    padding-top: var(--space-3xl); /* Reset to normal padding since banner no longer overlaps on mobile */
+  .houseWrapper {
+    height: 200px; /* Achicamos la imagen en responsivo */
   }
 }
 
 @media (max-width: 640px) {
   .container {
     padding: 0 var(--space-lg);
+  }
+  .houseWrapper {
+    height: 180px; /* Aún más pequeña en móviles pequeños */
   }
 }

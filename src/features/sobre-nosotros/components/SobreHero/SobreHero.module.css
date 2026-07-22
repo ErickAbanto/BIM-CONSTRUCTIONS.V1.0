@@ -23,9 +23,6 @@
 
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
-  .bannerWrapper {
-    transform: none; /* No overlap on mobile, just sit at the bottom of the gray section */
-  }
   .contentWrapper {
     padding-bottom: var(--space-3xl); /* Safety buffer so the button never touches the banner */
   }
