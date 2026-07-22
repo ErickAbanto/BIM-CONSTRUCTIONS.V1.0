@@ -22,5 +22,46 @@
       "btnRetry": "Try again",
       "btnBack": "Back to Home"
     }
+  },
+  "footer": {
+    "tagline": "Protecting your home from harmful leaks. Contact us",
+    "ctaText": "Call Anytime",
+    "company": {
+      "title": "BIM Constructions",
+      "desc": "Company specialized in project management, supervision, and execution with BIM technology.",
+      "menuTitle": "COMPANY",
+      "links": {
+        "about": "About Us",
+        "services": "Services",
+        "projects": "Projects",
+        "contact": "Contact"
+      }
+    },
+    "services": {
+      "title": "Services",
+      "items": [
+        "Project Management",
+        "Site Supervision",
+        "Construction",
+        "BIM Modeling",
+        "Consulting"
+      ],
+      "viewAll": "View all →"
+    },
+    "contact": {
+      "title": "Contact Methods",
+      "address": "Av.Incas 134 Tower 1 Of. 802",
+      "email": "contacto@jlvconsultores.com",
+      "phone": "(511) 651-0900 / 999 333 637",
+      "hoursTitle": "BUSINESS HOURS",
+      "hoursText1": "Monday - Friday",
+      "hoursTime1": "8:00 am - 6:50 pm",
+      "hoursText2": "Sundays",
+      "hoursTime2": "10:30 am - 4:15 pm"
+    },
+    "bottom": {
+      "copyright": "Copyright © {year}. BIM constructions S.A.C",
+      "socialTitle": "Contact methods:"
+    }
   }
 }

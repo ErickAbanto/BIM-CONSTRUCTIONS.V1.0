@@ -49,8 +49,8 @@ export default function GlobalError({ error, reset }) {
             >
               Reintentar
             </button>
-            <button
-              onClick={() => (window.location.href = "/")}
+            <a
+              href="/"
               style={{
                 padding: "0.75rem 1.5rem",
                 backgroundColor: "transparent",
@@ -59,10 +59,11 @@ export default function GlobalError({ error, reset }) {
                 borderRadius: "0.5rem",
                 cursor: "pointer",
                 fontSize: "1rem",
+                textDecoration: "none"
               }}
             >
-              Volver al Inicio
-            </button>
+              Volver al Inicio / Back to Home
+            </a>
           </div>
         </main>
       </body>

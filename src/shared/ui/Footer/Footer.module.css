@@ -1,0 +1,338 @@
+.footer {
+  color: #f3f4f6;
+  margin-top: auto;
+  font-family: var(--font-montserrat-google), 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Top Bar --- */
+.topBar {
+  background-color: #111827; /* Very dark background */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.topContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .topContainer {
+    flex-direction: row;
+    height: 100px;
+  }
+}
+
+.logo {
+  font-family: var(--font-bebas-google), 'Bebas Neue', cursive;
+  font-size: 2.5rem;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.logoWhite {
+  color: #ffffff;
+}
+
+.logoOrange {
+  color: var(--color-accent, #ea580c);
+}
+
+@media (min-width: 768px) {
+  .logo {
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+}
+
+.slogan {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  text-align: center;
+  max-width: 300px;
+}
+
+.ctaBox {
+  background-color: var(--color-accent, #ea580c);
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  height: 100%;
+}
+
+.ctaIconWrapper {
+  background-color: #000;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.ctaTextContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.ctaTitle {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.ctaPhone {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: pre-line;
+}
+
+/* --- Middle Area --- */
+.middleArea {
+  background-color: #1f2937; /* Dark gray/blue */
+  padding: 4rem 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  color: white;
+  margin: 0;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.text {
+  color: #9ca3af;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.menuGroup {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.menuTitle {
+  font-family: var(--font-bebas-google), 'Bebas Neue', cursive;
+  color: white;
+  letter-spacing: 0.05em;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.links li, .links a {
+  color: #d1d5db;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.links a:hover {
+  color: var(--color-accent, #ea580c);
+}
+
+.bullet {
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+
+.viewAll {
+  color: #d1d5db;
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.viewAll:hover {
+  color: var(--color-accent, #ea580c);
+}
+
+/* Contact List */
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.contactList li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contactList p {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.iconCircle {
+  background-color: #000;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+/* Hours Box */
+.hoursGroup {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.hoursBox {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.clockIcon {
+  color: var(--color-accent, #ea580c);
+  flex-shrink: 0;
+}
+
+.hoursLines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.hourLine {
+  display: flex;
+  flex-direction: column;
+}
+
+.hourDay {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.hourTime {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+/* --- Bottom Area --- */
+.bottomArea {
+  background-color: #111827;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bottomContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .bottomContainer {
+    flex-direction: row;
+  }
+}
+
+.copyright {
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.socialBox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.socialTitle {
+  color: #9ca3af;
+}
+
+.socialLinks {
+  color: var(--color-accent, #ea580c);
+}
+
+.socialLinks a {
+  color: var(--color-accent, #ea580c);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.socialLinks a:hover {
+  color: white;
+}

@@ -43,11 +43,11 @@ export class ErrorBoundary extends Component {
       return (
         this.props.fallback || (
           <div role="alert" style={{ padding: "var(--space-xl)", textAlign: "center", backgroundColor: "var(--color-gray-100)", borderRadius: "8px" }}>
-            <Text as="h3" style={{ marginBottom: "var(--space-sm)" }}>Algo salió mal en esta sección</Text>
+            <Text as="h3" style={{ marginBottom: "var(--space-sm)" }}>Algo salió mal en esta sección / Something went wrong in this section</Text>
             <Text as="p" variant="muted" style={{ marginBottom: "var(--space-md)" }}>
-              {"Ocurrió un error inesperado."}
+              {"Ocurrió un error inesperado. / An unexpected error occurred."}
             </Text>
-            <Button variant="outline" onClick={this.handleReset}>Intentar de nuevo</Button>
+            <Button variant="outline" onClick={this.handleReset}>Intentar de nuevo / Try again</Button>
           </div>
         )
       );

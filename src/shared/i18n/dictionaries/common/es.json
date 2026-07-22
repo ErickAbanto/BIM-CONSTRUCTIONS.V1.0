@@ -22,5 +22,46 @@
       "btnRetry": "Intentar de nuevo",
       "btnBack": "Volver al Inicio"
     }
+  },
+  "footer": {
+    "tagline": "Protegiendo su hogar de filtraciones dañinas. Contáctenos",
+    "ctaText": "Llame en Cualquier Momento",
+    "company": {
+      "title": "BIM Constructions",
+      "desc": "Empresa especializada en gerencia, supervisión y ejecución de proyectos con tecnología BIM.",
+      "menuTitle": "EMPRESA",
+      "links": {
+        "about": "Nosotros",
+        "services": "Servicios",
+        "projects": "Proyectos",
+        "contact": "Contacto"
+      }
+    },
+    "services": {
+      "title": "Servicios",
+      "items": [
+        "Gerencia de proyectos",
+        "Supervisión de obras",
+        "Construcción",
+        "Modelado BIM",
+        "Consultoría"
+      ],
+      "viewAll": "Ver todos →"
+    },
+    "contact": {
+      "title": "Medios de Contacto",
+      "address": "Av.Incas 134 Torre 1 Of. 802",
+      "email": "contacto@jlvconsultores.com",
+      "phone": "(511) 651-0900 / 999 333 637",
+      "hoursTitle": "HORARIOS",
+      "hoursText1": "Lunes - Viernes",
+      "hoursTime1": "8:00 am - 6:50 pm",
+      "hoursText2": "Domingos",
+      "hoursTime2": "10:30 am - 4:15 pm"
+    },
+    "bottom": {
+      "copyright": "Copyright © {year}. BIM constructions S.A.C",
+      "socialTitle": "Medios de contacto:"
+    }
   }
 }

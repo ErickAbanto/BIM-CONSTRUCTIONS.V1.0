@@ -20,7 +20,7 @@
     },
     "form": {
       "title": "Leave Us a Message",
-      "subtitle": "\"Please complete the form and detail your request, we will respond shortly.\"",
+      "subtitle": "Please complete the form and detail your request, we will respond shortly.",
       "fields": {
         "name": "Name",
         "email": "Email",

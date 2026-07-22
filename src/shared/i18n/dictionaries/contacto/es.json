@@ -20,7 +20,7 @@
     },
     "form": {
       "title": "Déjanos tu Mensaje",
-      "subtitle": "\"Por favor, complete el formulario y detalle su solicitud, le responderemos.\"",
+      "subtitle": "Por favor, complete el formulario y detalle su solicitud, le responderemos.",
       "fields": {
         "name": "Nombre",
         "email": "Email",

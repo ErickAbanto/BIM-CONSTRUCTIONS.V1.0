@@ -28,7 +28,7 @@ export async function submitContactForm(prevState, formData) {
   const honeypot = formData.get("bot_field");
   if (honeypot) {
     console.warn("[Security] Bot detected via honeypot.");
-    return { success: true, message: "Mensaje enviado exitosamente." }; // Fake success
+    return { success: true, message: "Mensaje enviado exitosamente. / Message sent successfully." }; // Fake success
   }
 
   const rawData = {
@@ -52,7 +52,7 @@ export async function submitContactForm(prevState, formData) {
       console.warn(`[Security] Rate limit hit for ${rateLimitKey}`);
       return { 
         success: false, 
-        message: "Estás enviando mensajes muy rápido. Por favor, espera un minuto." 
+        message: "Estás enviando mensajes muy rápido. Por favor, espera un minuto. / You are sending messages too fast. Please wait a minute." 
       };
     }
   }
@@ -64,7 +64,7 @@ export async function submitContactForm(prevState, formData) {
     return {
       success: false,
       errors: parsed.error.flatten().fieldErrors,
-      message: "Por favor, revisa los errores en el formulario.",
+      message: "Por favor, revisa los errores en el formulario. / Please check the errors in the form.",
     };
   }
 
@@ -78,20 +78,20 @@ export async function submitContactForm(prevState, formData) {
     if (!emailResult.success) {
       return {
         success: false,
-        message: "Hubo un problema al enviar el mensaje. Intenta de nuevo más tarde.",
+        message: "Hubo un problema al enviar el mensaje. Intenta de nuevo más tarde. / There was a problem sending the message. Please try again later.",
       };
     }
 
     // 5. Return success
     return {
       success: true,
-      message: "¡Gracias por contactarnos! Hemos recibido tu mensaje.",
+      message: "¡Gracias por contactarnos! Hemos recibido tu mensaje. / Thank you for contacting us! We have received your message.",
     };
   } catch (error) {
     console.error("[SubmitContactForm] Action error:", error);
     return {
       success: false,
-      message: "Ocurrió un error inesperado.",
+      message: "Ocurrió un error inesperado. / An unexpected error occurred.",
     };
   }
 }

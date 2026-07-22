@@ -24,8 +24,25 @@ export async function generateMetadata({ params }) {
       default: dict.home?.metadata?.title || 'BIM Constructions — Ingeniería y Construcción Profesional',
     },
     description: dict.home?.metadata?.description || 'BIM Constructions ofrece servicios de ingeniería, construcción y gestión de proyectos con tecnología BIM de vanguardia.',
+    openGraph: {
+      title: dict.home?.metadata?.title,
+      description: dict.home?.metadata?.description,
+      url: 'https://bim-constructions.com',
+      siteName: 'BIM Constructions',
+      images: [{ url: '/images/proyectos/corporate_building_1784149314956.png', width: 1200, height: 630 }],
+      locale: lang,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: dict.home?.metadata?.title,
+      description: dict.home?.metadata?.description,
+      images: ['/images/proyectos/corporate_building_1784149314956.png'],
+    }
   };
 }
+
+import { Footer } from "@/shared/ui/Footer/Footer";
 
 /**
  * Root layout for the BIM Constructions application.
@@ -42,10 +59,13 @@ export default async function RootLayout({ children, params }) {
   const dict = await getDictionary(lang);
 
   return (
-    <html lang={lang} className={`${montserrat.variable} ${bebasNeue.variable}`} data-scroll-behavior="smooth" suppressHydrationWarning={true}>
-      <body suppressHydrationWarning={true}>
+    <html lang={lang} className={`${montserrat.variable} ${bebasNeue.variable}`}>
+      <body style={{ display: "flex", flexDirection: "column", minHeight: "100vh", margin: 0 }}>
         <Navbar dict={dict.navbar} lang={lang} />
-        {children}
+        <main style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+          {children}
+        </main>
+        <Footer dict={dict.footer} lang={lang} />
       </body>
     </html>
   );

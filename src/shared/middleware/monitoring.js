@@ -49,12 +49,16 @@ class MonitoringService {
   }
 
   /**
-   * @param {LogEntry} entry
+   * @param {LogEntry} error
+   * @param {Object} [context]
    * @private
    */
-  sendToExternal(entry) {
+  sendToExternal(error, context) {
     // Stub: In a real app, this would POST to /api/monitoring/logs or use Sentry/Datadog SDK
     // console.log("Sent to external monitoring:", entry);
+    if (process.env.NODE_ENV === 'production') {
+      console.error('[Monitoring Fallback]', error, context);
+    }
   }
 }
 
