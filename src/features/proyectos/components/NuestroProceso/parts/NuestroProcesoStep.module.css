@@ -34,8 +34,8 @@
   position: absolute;
   font-size: 6rem;
   font-weight: 900;
-  color: var(--color-primary);
-  opacity: 0.15;
+  color: var(--color-accent);
+  opacity: 0.35;
   top: -20px;
   user-select: none;
   z-index: 0;
