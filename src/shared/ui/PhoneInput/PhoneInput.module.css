@@ -1,0 +1,53 @@
+/* Overrides for react-phone-number-input to match BIM design system */
+
+.wrapper {
+  width: 100%;
+}
+
+.wrapper :global(.PhoneInput) {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1.5px solid var(--color-gray-500);
+  transition: border-color var(--transition-fast);
+}
+
+.wrapper :global(.PhoneInput:focus-within) {
+  border-bottom-color: var(--color-primary);
+}
+
+.wrapper :global(.PhoneInputCountry) {
+  display: flex;
+  align-items: center;
+  margin-right: var(--space-sm);
+}
+
+.wrapper :global(.PhoneInputCountrySelect) {
+  /* Hide the native select, it sits on top of the flag */
+}
+
+.wrapper :global(.PhoneInputCountryIcon) {
+  width: 24px;
+  height: 16px;
+  border: 1px solid var(--color-gray-300);
+}
+
+.wrapper :global(.PhoneInputCountryIcon--border) {
+  box-shadow: none;
+}
+
+/* The actual text input for the number */
+.wrapper :global(.PhoneInputInput) {
+  flex: 1;
+  padding: var(--space-sm) 0 var(--space-sm) 0;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-md);
+  color: var(--color-gray-900);
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.wrapper :global(.PhoneInputInput::placeholder) {
+  color: var(--color-gray-500);
+}

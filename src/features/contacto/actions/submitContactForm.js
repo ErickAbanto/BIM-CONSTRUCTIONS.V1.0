@@ -1,0 +1,91 @@
+"use server";
+
+import { contactFormSchema } from "@/shared/lib/validators";
+import { sendContactNotificationEmail } from "@/shared/lib/emailService";
+import { headers } from "next/headers";
+
+// In-memory cache for simple rate limiting
+const rateLimitCache = new Map();
+const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minuto
+
+/**
+ * Server Action to handle the contact form submission.
+ * Validates data and triggers the email service.
+ *
+ * @param {Object|null} prevState
+ * @param {FormData} formData
+ * @returns {Promise<{errors?: Object, message?: string, success?: boolean}>}
+ */
+export async function submitContactForm(prevState, formData) {
+  // 1. Honeypot check for bots
+  // If the honeypot field is filled, silently reject it to fool the bot
+  const honeypot = formData.get("bot_field");
+  if (honeypot) {
+    console.warn("[Security] Bot detected via honeypot.");
+    return { success: true, message: "Mensaje enviado exitosamente." }; // Fake success
+  }
+
+  const rawData = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    phone: formData.get("phone"),
+    address: formData.get("address"),
+    services: formData.get("services"),
+    message: formData.get("message"),
+  };
+
+  // 2.5 Rate Limiting (Capa 8) - Evita recargas y spam
+  const headersList = await headers();
+  const ip = headersList.get("x-forwarded-for") || "unknown";
+  const rateLimitKey = `${ip}-${rawData.email}`;
+  const now = Date.now();
+
+  if (rateLimitCache.has(rateLimitKey)) {
+    const lastSub = rateLimitCache.get(rateLimitKey);
+    if (now - lastSub < RATE_LIMIT_WINDOW_MS) {
+      console.warn(`[Security] Rate limit hit for ${rateLimitKey}`);
+      return { 
+        success: false, 
+        message: "Estás enviando mensajes muy rápido. Por favor, espera un minuto." 
+      };
+    }
+  }
+
+  const parsed = contactFormSchema.safeParse(rawData);
+
+  // 3. Validation failure handling
+  if (!parsed.success) {
+    return {
+      success: false,
+      errors: parsed.error.flatten().fieldErrors,
+      message: "Por favor, revisa los errores en el formulario.",
+    };
+  }
+
+  // 4. Execute business logic (Backend only)
+  try {
+    // Record the attempt for rate limiting
+    rateLimitCache.set(rateLimitKey, now);
+
+    const emailResult = await sendContactNotificationEmail(parsed.data);
+
+    if (!emailResult.success) {
+      return {
+        success: false,
+        message: "Hubo un problema al enviar el mensaje. Intenta de nuevo más tarde.",
+      };
+    }
+
+    // 5. Return success
+    return {
+      success: true,
+      message: "¡Gracias por contactarnos! Hemos recibido tu mensaje.",
+    };
+  } catch (error) {
+    console.error("[SubmitContactForm] Action error:", error);
+    return {
+      success: false,
+      message: "Ocurrió un error inesperado.",
+    };
+  }
+}
