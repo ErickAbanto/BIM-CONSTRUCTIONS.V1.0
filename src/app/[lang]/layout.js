@@ -19,6 +19,7 @@ export async function generateMetadata({ params }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
   return {
+    metadataBase: new URL('https://bim-constructions.com'),
     title: {
       template: '%s | BIM Constructions',
       default: dict.home?.metadata?.title || 'BIM Constructions — Ingeniería y Construcción Profesional',

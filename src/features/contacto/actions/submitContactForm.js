@@ -52,7 +52,8 @@ export async function submitContactForm(prevState, formData) {
       console.warn(`[Security] Rate limit hit for ${rateLimitKey}`);
       return { 
         success: false, 
-        message: "Estás enviando mensajes muy rápido. Por favor, espera un minuto. / You are sending messages too fast. Please wait a minute." 
+        message: "Estás enviando mensajes muy rápido. Por favor, espera un minuto. / You are sending messages too fast. Please wait a minute.",
+        values: rawData
       };
     }
   }
@@ -65,6 +66,7 @@ export async function submitContactForm(prevState, formData) {
       success: false,
       errors: parsed.error.flatten().fieldErrors,
       message: "Por favor, revisa los errores en el formulario. / Please check the errors in the form.",
+      values: rawData,
     };
   }
 
@@ -79,6 +81,7 @@ export async function submitContactForm(prevState, formData) {
       return {
         success: false,
         message: "Hubo un problema al enviar el mensaje. Intenta de nuevo más tarde. / There was a problem sending the message. Please try again later.",
+        values: rawData,
       };
     }
 

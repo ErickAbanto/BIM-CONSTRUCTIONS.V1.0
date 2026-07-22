@@ -24,8 +24,9 @@ export function PhoneInput({
   required,
   className,
   ariaInvalid,
+  defaultValue,
 }) {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(defaultValue || "");
 
   return (
     <div className={cn(styles.wrapper, className)}>

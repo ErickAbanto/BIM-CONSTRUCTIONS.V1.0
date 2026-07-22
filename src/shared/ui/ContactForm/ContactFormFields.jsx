@@ -20,6 +20,7 @@ export function ContactFormFields({ dict, state }) {
           type="text"
           name="name"
           placeholder={dict.fields.name}
+          defaultValue={state?.values?.name || ""}
           required
           aria-invalid={!!state?.errors?.name}
           aria-describedby={state?.errors?.name ? 'error-name' : undefined}
@@ -32,6 +33,7 @@ export function ContactFormFields({ dict, state }) {
           type="email"
           name="email"
           placeholder={dict.fields.email}
+          defaultValue={state?.values?.email || ""}
           required
           aria-invalid={!!state?.errors?.email}
           aria-describedby={state?.errors?.email ? 'error-email' : undefined}
@@ -44,6 +46,7 @@ export function ContactFormFields({ dict, state }) {
           key={state?.success ? "phone-success" : "phone-default"}
           name="phone"
           placeholder={dict.fields.phone}
+          defaultValue={state?.values?.phone || ""}
           ariaInvalid={!!state?.errors?.phone}
           aria-describedby={state?.errors?.phone ? 'error-phone' : undefined}
         />
@@ -55,6 +58,7 @@ export function ContactFormFields({ dict, state }) {
           type="text"
           name="address"
           placeholder={dict.fields.address}
+          defaultValue={state?.values?.address || ""}
           aria-invalid={!!state?.errors?.address}
           aria-describedby={state?.errors?.address ? 'error-address' : undefined}
         />
@@ -66,7 +70,7 @@ export function ContactFormFields({ dict, state }) {
           as="select"
           name="services"
           required
-          defaultValue=""
+          defaultValue={state?.values?.services || ""}
           aria-invalid={!!state?.errors?.services}
           aria-describedby={state?.errors?.services ? 'error-services' : undefined}
         >
@@ -87,6 +91,7 @@ export function ContactFormFields({ dict, state }) {
           as="textarea"
           name="message"
           placeholder={dict.fields.message}
+          defaultValue={state?.values?.message || ""}
           required
           rows={5}
           aria-invalid={!!state?.errors?.message}
