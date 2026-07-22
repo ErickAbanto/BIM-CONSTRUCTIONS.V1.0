@@ -31,7 +31,7 @@
   width: 100%;
 }
 
-.contactList li {
+.contactItem {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,12 +39,12 @@
 }
 
 @media (min-width: 768px) {
-  .contactList li {
+  .contactItem {
     justify-content: flex-start;
   }
 }
 
-.contactList p, .contactList span {
+.contactText {
   color: var(--color-gray-500, #9ca3af);
   font-size: 0.9rem;
   margin: 0;

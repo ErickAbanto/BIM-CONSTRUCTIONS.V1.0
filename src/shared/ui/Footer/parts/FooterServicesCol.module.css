@@ -34,7 +34,7 @@
   }
 }
 
-.links li, .links a {
+.listItem, .linkItem {
   color: var(--color-white, #ffffff);
   text-decoration: none;
   transition: color 0.2s ease;
@@ -47,12 +47,12 @@
 }
 
 @media (min-width: 768px) {
-  .links li, .links a {
+  .listItem, .linkItem {
     justify-content: flex-start;
   }
 }
 
-.links a:hover {
+.linkItem:hover {
   color: var(--color-accent, #ea580c);
 }
 

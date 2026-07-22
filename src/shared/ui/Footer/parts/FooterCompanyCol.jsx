@@ -12,10 +12,10 @@ export function FooterCompanyCol({ dict, lang }) {
       <div className={styles.menuGroup}>
         <Text className={styles.menuTitle}>{dict.company.menuTitle}</Text>
         <ul className={styles.links}>
-          <li><Link href={`/${lang}`}>{dict.company.links.about}</Link></li>
-          <li><Link href={`/${lang}/servicios`}>{dict.company.links.services}</Link></li>
-          <li><Link href={`/${lang}/proyectos`}>{dict.company.links.projects}</Link></li>
-          <li><Link href={`/${lang}/contacto`}>{dict.company.links.contact}</Link></li>
+          <li className={styles.listItem}><Link href={`/${lang}`} className={styles.linkItem}>{dict.company.links.about}</Link></li>
+          <li className={styles.listItem}><Link href={`/${lang}/servicios`} className={styles.linkItem}>{dict.company.links.services}</Link></li>
+          <li className={styles.listItem}><Link href={`/${lang}/proyectos`} className={styles.linkItem}>{dict.company.links.projects}</Link></li>
+          <li className={styles.listItem}><Link href={`/${lang}/contacto`} className={styles.linkItem}>{dict.company.links.contact}</Link></li>
         </ul>
       </div>
     </div>

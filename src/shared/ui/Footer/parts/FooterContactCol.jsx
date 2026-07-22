@@ -8,23 +8,23 @@ export function FooterContactCol({ dict }) {
     <div className={styles.col}>
       <Title level="h3" className={styles.title}>{dict.contact.title}</Title>
       <ul className={styles.contactList}>
-        <li>
+        <li className={styles.contactItem}>
           <div className={styles.iconCircle}>
             <Icon name="mapPin" size={16} />
           </div>
-          <Text>{dict.contact.address}</Text>
+          <Text className={styles.contactText}>{dict.contact.address}</Text>
         </li>
-        <li>
+        <li className={styles.contactItem}>
           <div className={styles.iconCircle}>
             <Icon name="mail" size={16} />
           </div>
-          <Text>{dict.contact.email}</Text>
+          <Text className={styles.contactText}>{dict.contact.email}</Text>
         </li>
-        <li>
+        <li className={styles.contactItem}>
           <div className={styles.iconCircle}>
             <Icon name="phone" size={16} />
           </div>
-          <Text>{dict.contact.phone}</Text>
+          <Text className={styles.contactText}>{dict.contact.phone}</Text>
         </li>
       </ul>
       

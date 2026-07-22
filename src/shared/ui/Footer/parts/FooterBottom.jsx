@@ -12,16 +12,16 @@ export function FooterBottom({ dict }) {
         <div className={styles.socialBox}>
           <Text className={styles.socialTitle}>{dict.bottom.socialTitle}</Text>
           <div className={styles.socialLinks}>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a href="https://facebook.com" className={styles.socialLink} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <SocialIcon name="facebook" size={20} />
             </a>
-            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <a href="https://whatsapp.com" className={styles.socialLink} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
               <SocialIcon name="whatsapp" size={20} />
             </a>
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+            <a href="https://x.com" className={styles.socialLink} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
               <SocialIcon name="x" size={20} />
             </a>
-            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <a href="https://tiktok.com" className={styles.socialLink} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
               <SocialIcon name="tiktok" size={20} />
             </a>
           </div>
