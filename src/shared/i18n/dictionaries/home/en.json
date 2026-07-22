@@ -32,5 +32,9 @@
       { "id": "industrial", "title": "Industrial Plant" },
       { "id": "bim", "title": "BIM Implementation" }
     ]
+  },
+  "metadata": {
+    "title": "BIM Constructions — Professional Engineering & Construction",
+    "description": "BIM Constructions offers engineering, construction and project management services with cutting-edge BIM technology."
   }
 }

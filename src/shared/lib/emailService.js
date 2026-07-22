@@ -1,6 +1,25 @@
 import "server-only"; // Ensures this module can never be imported into client components
 import { Resend } from "resend";
 
+if (process.env.NODE_ENV === 'production' && !process.env.RESEND_API_KEY) {
+  console.error('[EmailService] CRITICAL: RESEND_API_KEY is not set in production!');
+}
+
+/**
+ * Escapes HTML special characters to prevent XSS injection.
+ * @param {string} str
+ * @returns {string}
+ */
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 // Initialize Resend with the API key from the environment
 // Ensure RESEND_API_KEY is defined in .env.local
 const resend = new Resend(process.env.RESEND_API_KEY || "re_dummy_key_for_build");
@@ -25,14 +44,14 @@ export async function sendContactNotificationEmail(data) {
       replyTo: email,
       html: `
         <h2>Nuevo mensaje desde la web</h2>
-        <p><strong>Nombre:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Teléfono:</strong> ${phone || "No especificado"}</p>
-        <p><strong>Dirección:</strong> ${address || "No especificado"}</p>
-        <p><strong>Servicio de interés:</strong> ${services}</p>
+        <p><strong>Nombre:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Teléfono:</strong> ${escapeHtml(phone || "No especificado")}</p>
+        <p><strong>Dirección:</strong> ${escapeHtml(address || "No especificado")}</p>
+        <p><strong>Servicio de interés:</strong> ${escapeHtml(services)}</p>
         <br/>
         <h3>Mensaje:</h3>
-        <p>${message.replace(/\n/g, "<br/>")}</p>
+        <p>${escapeHtml(message).replace(/\n/g, "<br/>")}</p>
       `,
     });
 

@@ -49,3 +49,28 @@ export default async function ProyectoDetallePage({ params }) {
     </main>
   );
 }
+
+export function generateStaticParams() {
+  const locales = ['en', 'es'];
+  const params = [];
+  for (const lang of locales) {
+    const proyectos = PROYECTOS_DATA[lang] || PROYECTOS_DATA.es;
+    for (const proyecto of proyectos) {
+      params.push({ lang, slug: proyecto.slug });
+    }
+  }
+  return params;
+}
+
+export async function generateMetadata({ params }) {
+  const { lang, slug } = await params;
+  const proyectos = PROYECTOS_DATA[lang] || PROYECTOS_DATA.es;
+  const proyecto = proyectos.find(p => p.slug === slug);
+  if (!proyecto) {
+    return { title: 'Proyecto no encontrado' };
+  }
+  return {
+    title: proyecto.title,
+    description: (Array.isArray(proyecto.description) ? proyecto.description.join(' ') : (proyecto.description || '')).substring(0, 160) || `${proyecto.title} — BIM Constructions`,
+  };
+}

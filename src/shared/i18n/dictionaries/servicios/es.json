@@ -29,7 +29,7 @@
     "services": {
     "s1Title": "Gerencia de\nProyectos",
     "s2Title": "Supervisión\nde obras",
-    "s3Title": "Contrucción de\nEdificaciones"
+    "s3Title": "Construcción de\nEdificaciones"
   },
   "cta": {
     "title": "¿Listo para iniciar tu proyecto?",
@@ -53,5 +53,9 @@
         "text": "Prácticas eficientes que cuidan el medio ambiente y optimizan recursos."
       }
     ]
+  },
+  "metadata": {
+    "title": "Servicios",
+    "description": "Servicios de construcción, ingeniería y gestión de proyectos por BIM Constructions."
   }
 }

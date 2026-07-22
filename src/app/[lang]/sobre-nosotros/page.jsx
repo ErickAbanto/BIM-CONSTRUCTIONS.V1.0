@@ -33,9 +33,11 @@ export default async function SobreNosotrosPage({ params }) {
   );
 }
 
-/** @type {import('next').Metadata} */
-export const metadata = {
-  title: "Sobre Nosotros | BIM Constructions",
-  description:
-    "Conoce la historia, misión y visión de BIM Constructions J/J S.A.C. Expertos en construcción, ingeniería y gestión de proyectos con tecnología BIM de vanguardia.",
-};
+export async function generateMetadata({ params }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  return {
+    title: dict.sobreNosotros?.metadata?.title || 'Sobre Nosotros',
+    description: dict.sobreNosotros?.metadata?.description || 'Conoce la historia, misión y visión de BIM Constructions J/J S.A.C.',
+  };
+}

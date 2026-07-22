@@ -18,7 +18,7 @@ export default function ContactoError({ error, reset }) {
         No se pudo cargar la información de contacto
       </Text>
       <Text as="p" variant="muted" style={{ marginBottom: "var(--space-2xl)" }}>
-        {error.message || "Ha ocurrido un problema de conexión. Intenta cargar la página nuevamente."}
+        {"Ha ocurrido un problema de conexión. Intenta cargar la página nuevamente."}
       </Text>
       <Button variant="primary" onClick={reset}>Reintentar</Button>
     </div>

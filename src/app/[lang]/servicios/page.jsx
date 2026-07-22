@@ -38,9 +38,11 @@ export default async function ServiciosPage({ params }) {
   );
 }
 
-/** @type {import('next').Metadata} */
-export const metadata = {
-  title: "Servicios | BIM Constructions",
-  description:
-    "Servicios de construcción, ingeniería y gestión de proyectos por BIM Constructions. Gerencia de proyectos, supervisión de obras, modelado BIM y más.",
-};
+export async function generateMetadata({ params }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  return {
+    title: dict.servicios?.metadata?.title || 'Servicios',
+    description: dict.servicios?.metadata?.description || 'Servicios de construcción, ingeniería y gestión de proyectos por BIM Constructions.',
+  };
+}

@@ -64,3 +64,10 @@
     margin-bottom: var(--space-lg);
   }
 }
+
+.errorText {
+  color: #dc2626;
+  font-size: var(--font-size-xs, 0.75rem);
+  margin-top: 0.25rem;
+  display: block;
+}

@@ -32,5 +32,9 @@
       { "id": "industrial", "title": "Planta Industrial" },
       { "id": "bim", "title": "Implementación BIM" }
     ]
+  },
+  "metadata": {
+    "title": "BIM Constructions — Ingeniería y Construcción Profesional",
+    "description": "BIM Constructions ofrece servicios de ingeniería, construcción y gestión de proyectos con tecnología BIM de vanguardia."
   }
 }

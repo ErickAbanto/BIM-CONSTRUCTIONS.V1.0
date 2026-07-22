@@ -27,4 +27,4 @@ const dictionaries = {
  * @param {'en' | 'es'} locale
  * @returns {Promise<Object>}
  */
-export const getDictionary = async (locale) => dictionaries[locale]();
+export const getDictionary = async (locale) => (dictionaries[locale] || dictionaries.es)();

@@ -27,9 +27,11 @@ export default async function ProyectosPage({ params }) {
   );
 }
 
-/** @type {import('next').Metadata} */
-export const metadata = {
-  title: "Proyectos | BIM Constructions",
-  description:
-    "Descubre los proyectos de construcción e ingeniería realizados por BIM Constructions.",
-};
+export async function generateMetadata({ params }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  return {
+    title: dict.proyectos?.metadata?.title || 'Proyectos',
+    description: dict.proyectos?.metadata?.description || 'Descubre los proyectos de construcción e ingeniería realizados por BIM Constructions.',
+  };
+}

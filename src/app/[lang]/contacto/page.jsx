@@ -23,9 +23,11 @@ export default async function ContactoPage({ params }) {
   );
 }
 
-/** @type {import('next').Metadata} */
-export const metadata = {
-  title: "Contacto | BIM Constructions",
-  description:
-    "Contáctanos para cotizaciones, consultas y más información sobre nuestros servicios de construcción.",
-};
+export async function generateMetadata({ params }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  return {
+    title: dict.contacto?.metadata?.title || 'Contacto',
+    description: dict.contacto?.metadata?.description || 'Contáctanos para cotizaciones, consultas y más información sobre nuestros servicios de construcción.',
+  };
+}

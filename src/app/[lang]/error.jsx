@@ -21,8 +21,10 @@ export default function GlobalError({ error, reset }) {
   const dict = lang === "en" ? enDict.errors.serverError : esDict.errors.serverError;
 
   useEffect(() => {
-    // Aquí podríamos conectar a Sentry o DataDog en el futuro
-    console.error("Error capturado por Global Error Boundary:", error);
+    if (process.env.NODE_ENV === 'development') {
+      console.error("Error capturado por Error Boundary:", error);
+    }
+    // In production, connect to Sentry or DataDog
   }, [error]);
 
   return (

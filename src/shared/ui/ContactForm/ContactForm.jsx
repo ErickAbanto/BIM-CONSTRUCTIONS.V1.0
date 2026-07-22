@@ -1,11 +1,10 @@
 "use client";
 
-import { useActionState, useEffect } from "react";
+import { useActionState, useEffect, useRef } from "react";
 import styles from "./ContactForm.module.css";
 import { Title } from "@/shared/ui/Title/Title";
 import { Text } from "@/shared/ui/Text/Text";
-import { Input } from "@/shared/ui/Input/Input";
-import { PhoneInput } from "@/shared/ui/PhoneInput/PhoneInput";
+import { ContactFormFields } from "./ContactFormFields";
 import { SubmitButton } from "@/shared/ui/SubmitButton/SubmitButton";
 import { submitContactForm } from "@/features/contacto/actions/submitContactForm";
 
@@ -24,20 +23,26 @@ import { submitContactForm } from "@/features/contacto/actions/submitContactForm
  */
 export function ContactForm({ dict, titleOverride, subtitleOverride }) {
   const [state, formAction] = useActionState(submitContactForm, null);
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    if (state?.success) {
+      formRef.current?.reset();
+    }
+  }, [state?.success]);
 
   if (!dict) return null;
 
-  /** Derive ordered service options from the dictionary */
   const SERVICE_OPTION_KEYS = ["construccion", "diseno", "consultoria", "supervision"];
 
   return (
     <form
+      ref={formRef}
       className={styles.form}
       action={formAction}
       aria-label={dict.title}
       noValidate
     >
-      {/* ── Header ── */}
       <Title level="h2" className={styles.title}>
         {titleOverride !== undefined ? titleOverride : dict.title}
       </Title>
@@ -48,10 +53,8 @@ export function ContactForm({ dict, titleOverride, subtitleOverride }) {
         </Text>
       )}
 
-      {/* Honeypot field for bot protection */}
-      <input type="text" name="bot_field" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+      <input type="text" name="bot_field" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" aria-hidden="true" />
 
-      {/* ── Feedback Message ── */}
       {state?.message && (
         <div 
           className={styles.formMessage} 
@@ -68,84 +71,8 @@ export function ContactForm({ dict, titleOverride, subtitleOverride }) {
         </div>
       )}
 
-      {/* ── Fields grid ── */}
-      <div className={styles.formGrid}>
-        <div className={styles.inputGroup}>
-          <Input
-            type="text"
-            name="name"
-            placeholder={dict.fields.name}
-            required
-            aria-invalid={!!state?.errors?.name}
-          />
-          {state?.errors?.name && <span className={styles.errorText} style={{ color: 'red', fontSize: '0.8rem', marginTop: '4px', display: 'block' }}>{state.errors.name[0]}</span>}
-        </div>
+      <ContactFormFields dict={dict} state={state} />
 
-        <div className={styles.inputGroup}>
-          <Input
-            type="email"
-            name="email"
-            placeholder={dict.fields.email}
-            required
-            aria-invalid={!!state?.errors?.email}
-          />
-          {state?.errors?.email && <span className={styles.errorText} style={{ color: 'red', fontSize: '0.8rem', marginTop: '4px', display: 'block' }}>{state.errors.email[0]}</span>}
-        </div>
-
-        <div className={styles.inputGroup}>
-          <PhoneInput
-            name="phone"
-            placeholder={dict.fields.phone}
-            ariaInvalid={!!state?.errors?.phone}
-          />
-          {state?.errors?.phone && <span className={styles.errorText} style={{ color: 'red', fontSize: '0.8rem', marginTop: '4px', display: 'block' }}>{state.errors.phone[0]}</span>}
-        </div>
-
-        <div className={styles.inputGroup}>
-          <Input
-            type="text"
-            name="address"
-            placeholder={dict.fields.address}
-            aria-invalid={!!state?.errors?.address}
-          />
-          {state?.errors?.address && <span className={styles.errorText} style={{ color: 'red', fontSize: '0.8rem', marginTop: '4px', display: 'block' }}>{state.errors.address[0]}</span>}
-        </div>
-
-        {/* Service selector — options sourced from i18n dict */}
-        <div className={`${styles.inputGroup} ${styles.fullWidth}`}>
-          <Input
-            as="select"
-            name="services"
-            required
-            defaultValue=""
-            aria-invalid={!!state?.errors?.services}
-          >
-            <option value="" disabled hidden>
-              {dict.serviceOptions?.placeholder || dict.fields.services}
-            </option>
-            {SERVICE_OPTION_KEYS.map((key) => (
-              <option key={key} value={key}>
-                {dict.serviceOptions?.[key] ?? key}
-              </option>
-            ))}
-          </Input>
-          {state?.errors?.services && <span className={styles.errorText} style={{ color: 'red', fontSize: '0.8rem', marginTop: '4px', display: 'block' }}>{state.errors.services[0]}</span>}
-        </div>
-
-        <div className={`${styles.inputGroup} ${styles.fullWidth}`}>
-          <Input
-            as="textarea"
-            name="message"
-            placeholder={dict.fields.message}
-            required
-            rows={5}
-            aria-invalid={!!state?.errors?.message}
-          />
-          {state?.errors?.message && <span className={styles.errorText} style={{ color: 'red', fontSize: '0.8rem', marginTop: '4px', display: 'block' }}>{state.errors.message[0]}</span>}
-        </div>
-      </div>
-
-      {/* ── Submit ── */}
       <div className={styles.submitWrapper}>
         <SubmitButton 
           label={dict.submit} 

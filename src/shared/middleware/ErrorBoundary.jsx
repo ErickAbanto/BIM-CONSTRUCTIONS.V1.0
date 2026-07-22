@@ -21,11 +21,13 @@ export class ErrorBoundary extends Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.error(
-      `[ErrorBoundary${this.props.name ? `:${this.props.name}` : ""}]`,
-      error,
-      errorInfo,
-    );
+    if (process.env.NODE_ENV === 'development') {
+      console.error(
+        `[ErrorBoundary${this.props.name ? `:${this.props.name}` : ""}]`,
+        error,
+        errorInfo,
+      );
+    }
     this.props.onError?.(error, errorInfo);
   }
 
@@ -43,7 +45,7 @@ export class ErrorBoundary extends Component {
           <div role="alert" style={{ padding: "var(--space-xl)", textAlign: "center", backgroundColor: "var(--color-gray-100)", borderRadius: "8px" }}>
             <Text as="h3" style={{ marginBottom: "var(--space-sm)" }}>Algo salió mal en esta sección</Text>
             <Text as="p" variant="muted" style={{ marginBottom: "var(--space-md)" }}>
-              {this.state.error?.message || "Ocurrió un error inesperado."}
+              {"Ocurrió un error inesperado."}
             </Text>
             <Button variant="outline" onClick={this.handleReset}>Intentar de nuevo</Button>
           </div>

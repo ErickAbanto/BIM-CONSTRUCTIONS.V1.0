@@ -15,12 +15,17 @@ const bebasNeue = Bebas_Neue({
   weight: ["400"],
 });
 
-/** @type {import('next').Metadata} */
-export const metadata = {
-  title: "BIM Constructions — Ingeniería y Construcción Profesional",
-  description:
-    "BIM Constructions ofrece servicios de ingeniería, construcción y gestión de proyectos con tecnología BIM de vanguardia.",
-};
+export async function generateMetadata({ params }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  return {
+    title: {
+      template: '%s | BIM Constructions',
+      default: dict.home?.metadata?.title || 'BIM Constructions — Ingeniería y Construcción Profesional',
+    },
+    description: dict.home?.metadata?.description || 'BIM Constructions ofrece servicios de ingeniería, construcción y gestión de proyectos con tecnología BIM de vanguardia.',
+  };
+}
 
 /**
  * Root layout for the BIM Constructions application.

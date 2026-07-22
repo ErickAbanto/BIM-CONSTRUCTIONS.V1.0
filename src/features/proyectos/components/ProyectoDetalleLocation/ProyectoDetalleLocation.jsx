@@ -1,7 +1,7 @@
 import styles from "./ProyectoDetalleLocation.module.css";
 import { LocationHeader } from "./parts/LocationHeader";
 import { LocationMap } from "./parts/LocationMap";
-import { CIENTEGA_MAP_URL } from "@/shared/constants/maps";
+import { CIENEGUILLA_MAP_URL } from "@/shared/constants/maps";
 
 /**
  * Component to display the project's location using a Google Maps iframe.
@@ -12,7 +12,7 @@ import { CIENTEGA_MAP_URL } from "@/shared/constants/maps";
 export function ProyectoDetalleLocation({ dict }) {
   const t = dict.proyectos?.projectDetails?.location || {};
 
-  const mapSrc = CIENTEGA_MAP_URL;
+  const mapSrc = CIENEGUILLA_MAP_URL;
 
   return (
     <section className={styles.locationSection}>

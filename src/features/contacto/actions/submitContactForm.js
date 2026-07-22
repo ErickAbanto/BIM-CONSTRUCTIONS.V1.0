@@ -5,6 +5,12 @@ import { sendContactNotificationEmail } from "@/shared/lib/emailService";
 import { headers } from "next/headers";
 
 // In-memory cache for simple rate limiting
+/**
+ * In-memory rate limiting cache.
+ * ⚠️ LIMITATION: This Map does not persist across serverless function invocations
+ * (e.g., Vercel). For production serverless deployments, consider using
+ * Vercel KV, Upstash Redis, or similar distributed key-value stores.
+ */
 const rateLimitCache = new Map();
 const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minuto
 

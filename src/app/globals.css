@@ -21,6 +21,7 @@
   --color-bim-blue-rgb: 34, 60, 145;
   --color-bim-orange-rgb: 220, 100, 3;
   --color-bim-white-rgb: 255, 255, 255;
+  --color-black: #000000;
   --color-black-rgb: 0, 0, 0;
 
   /* Neutral palette */
@@ -126,7 +127,9 @@ a {
   text-decoration: none;
 }
 
-/* Smooth scroll for anchor navigation */
-html {
-  scroll-behavior: smooth;
+/* Smooth scroll for anchor navigation — respects user preferences */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }

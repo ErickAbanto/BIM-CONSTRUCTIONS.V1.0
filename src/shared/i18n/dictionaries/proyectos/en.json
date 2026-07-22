@@ -61,5 +61,9 @@
     "description": "Our consulting team will advise you throughout the entire implementation process of your project.",
     "socialTitle": "Our Social Media",
     "formTitle": "Leave us a Message"
+  },
+  "metadata": {
+    "title": "Projects",
+    "description": "Discover the construction and engineering projects completed by BIM Constructions."
   }
 }
